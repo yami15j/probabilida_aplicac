@@ -1,0 +1,24 @@
+<h2>🎯 Variaciones</h2>
+
+<div class="input-container">
+  <div class="input-group">
+    <label>Elementos (separados por coma):</label>
+    <input [(ngModel)]="elementosStr" placeholder="Ej: S1,S2,S3,S4,S5,S6">
+  </div>
+  
+  <div class="input-group">
+    <label>Cuántos tomar (k):</label>
+    <input type="number" [(ngModel)]="k" placeholder="Ej: 3" min="1">
+  </div>
+  
+  <button (click)="calcular()">Calcular Variaciones</button>
+</div>
+
+<div class="resultado-container" *ngIf="resultadoNumero !== null">
+  <h3>📊 Número de combinaciones: {{resultadoNumero}}</h3>
+  <ul>
+    <li *ngFor="let c of combinacionesLista; let i = index">
+      {{c.join(', ')}}
+    </li>
+  </ul>
+</div>

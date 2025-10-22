@@ -1,0 +1,17 @@
+<h2>🔄 Permutaciones</h2>
+
+<div class="input-container">
+  <label>Elementos (separados por coma):</label>
+  <input [(ngModel)]="elementosStr" placeholder="Ej: A,B,C,D,E,F">
+  
+  <button (click)="calcular()">Calcular Permutaciones</button>
+</div>
+
+<div class="resultado-container" *ngIf="resultadoNumero !== null">
+  <h3>📊 Número de permutaciones: {{resultadoNumero}}</h3>
+  <ul>
+    <li *ngFor="let p of permutacionesLista; let i = index">
+      {{p.join(', ')}}
+    </li>
+  </ul>
+</div>
