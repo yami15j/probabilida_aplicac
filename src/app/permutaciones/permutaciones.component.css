@@ -23,22 +23,8 @@ h2 {
   font-size: 1.1rem;
 }
 
-.enunciado-section {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-  border: 2px solid rgba(102, 126, 234, 0.1);
-}
-
-.enunciado-section h3 {
-  color: #667eea;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.enunciado-group {
+  margin-bottom: 1.5rem;
 }
 
 .enunciado-editable {
@@ -52,12 +38,14 @@ h2 {
   resize: vertical;
   transition: all 0.3s;
   font-family: inherit;
+  background: #f8fafc;
 }
 
 .enunciado-editable:focus {
   outline: none;
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  background: white;
 }
 
 .input-container {

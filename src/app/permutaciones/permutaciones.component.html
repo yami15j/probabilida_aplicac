@@ -1,16 +1,19 @@
 <h2>🔄 Permutaciones</h2>
 <p class="subtitle">Calcula permutaciones P(n) = n! (ordenaciones de todos los elementos)</p>
 
-<div class="enunciado-section">
-  <h3>📝 Enunciado del Problema</h3>
-  <textarea 
-    class="enunciado-editable" 
-    [(ngModel)]="enunciado"
-    placeholder="Escribe aquí el enunciado de tu problema... Por ejemplo: '¿De cuántas formas diferentes se pueden ordenar 5 libros (A,B,C,D,E) en un estante?'">
-  </textarea>
-</div>
-
 <div class="input-container">
+  <div class="enunciado-group">
+    <label>
+      <span class="label-icon">📝</span>
+      Enunciado del Problema:
+    </label>
+    <textarea 
+      class="enunciado-editable" 
+      [(ngModel)]="enunciado"
+      placeholder="Escribe aquí el enunciado de tu problema... Por ejemplo: '¿De cuántas formas diferentes se pueden ordenar 5 libros (A,B,C,D,E) en un estante?'">
+    </textarea>
+  </div>
+
   <div class="input-group">
     <label>
       <span class="label-icon">📦</span>

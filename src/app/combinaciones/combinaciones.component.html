@@ -1,16 +1,19 @@
 <h2>🎯 Variaciones</h2>
 <p class="subtitle">Calcula variaciones sin repetición V(n,k) = n!/(n-k)!</p>
 
-<div class="enunciado-section">
-  <h3>📝 Enunciado del Problema</h3>
-  <textarea 
-    class="enunciado-editable" 
-    [(ngModel)]="enunciado"
-    placeholder="Escribe aquí el enunciado de tu problema... Por ejemplo: 'De un grupo de 6 estudiantes (S1,S2,S3,S4,S5,S6), ¿de cuántas formas se pueden elegir 3 para ocupar los cargos de presidente, vicepresidente y secretario?'">
-  </textarea>
-</div>
-
 <div class="input-container">
+  <div class="enunciado-group">
+    <label>
+      <span class="label-icon">📝</span>
+      Enunciado del Problema:
+    </label>
+    <textarea 
+      class="enunciado-editable" 
+      [(ngModel)]="enunciado"
+      placeholder="Escribe aquí el enunciado de tu problema... Por ejemplo: 'De un grupo de 6 estudiantes (S1,S2,S3,S4,S5,S6), ¿de cuántas formas se pueden elegir 3 para ocupar los cargos de presidente, vicepresidente y secretario?'">
+    </textarea>
+  </div>
+
   <div class="input-grid">
     <div class="input-group">
       <label>
