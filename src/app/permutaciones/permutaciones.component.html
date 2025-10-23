@@ -1,17 +1,45 @@
 <h2>🔄 Permutaciones</h2>
+<p class="subtitle">Calcula permutaciones P(n) = n! (ordenaciones de todos los elementos)</p>
+
+<div class="enunciado-section">
+  <h3>📝 Enunciado del Problema</h3>
+  <textarea 
+    class="enunciado-editable" 
+    [(ngModel)]="enunciado"
+    placeholder="Escribe aquí el enunciado de tu problema... Por ejemplo: '¿De cuántas formas diferentes se pueden ordenar 5 libros (A,B,C,D,E) en un estante?'">
+  </textarea>
+</div>
 
 <div class="input-container">
-  <label>Elementos (separados por coma):</label>
-  <input [(ngModel)]="elementosStr" placeholder="Ej: A,B,C,D,E,F">
+  <div class="input-group">
+    <label>
+      <span class="label-icon">📦</span>
+      Elementos (separados por coma):
+    </label>
+    <input [(ngModel)]="elementosStr" placeholder="Ej: A,B,C,D,E,F">
+  </div>
   
-  <button (click)="calcular()">Calcular Permutaciones</button>
+  <div class="formula-hint">
+    <strong>💡 Fórmula de Permutaciones:</strong>
+    P(n) = n! donde n es el número total de elementos (todos se ordenan)
+  </div>
+  
+  <button (click)="calcular()">✨ Calcular Permutaciones</button>
 </div>
 
 <div class="resultado-container" *ngIf="resultadoNumero !== null">
-  <h3>📊 Número de permutaciones: {{resultadoNumero}}</h3>
+  <div class="resultado-header">
+    <h3>Número total de permutaciones:</h3>
+    <div class="resultado-numero">{{resultadoNumero}}</div>
+  </div>
+  
+  <div class="lista-titulo">
+    📋 Lista completa de permutaciones ({{permutacionesLista.length}} resultados)
+  </div>
+  
   <ul>
     <li *ngFor="let p of permutacionesLista; let i = index">
-      {{p.join(', ')}}
+      {{i + 1}}. {{p.join(' → ')}}
     </li>
   </ul>
 </div>

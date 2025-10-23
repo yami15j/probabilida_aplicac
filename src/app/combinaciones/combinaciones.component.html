@@ -1,24 +1,55 @@
 <h2>🎯 Variaciones</h2>
+<p class="subtitle">Calcula variaciones sin repetición V(n,k) = n!/(n-k)!</p>
+
+<div class="enunciado-section">
+  <h3>📝 Enunciado del Problema</h3>
+  <textarea 
+    class="enunciado-editable" 
+    [(ngModel)]="enunciado"
+    placeholder="Escribe aquí el enunciado de tu problema... Por ejemplo: 'De un grupo de 6 estudiantes (S1,S2,S3,S4,S5,S6), ¿de cuántas formas se pueden elegir 3 para ocupar los cargos de presidente, vicepresidente y secretario?'">
+  </textarea>
+</div>
 
 <div class="input-container">
-  <div class="input-group">
-    <label>Elementos (separados por coma):</label>
-    <input [(ngModel)]="elementosStr" placeholder="Ej: S1,S2,S3,S4,S5,S6">
+  <div class="input-grid">
+    <div class="input-group">
+      <label>
+        <span class="label-icon">📦</span>
+        Elementos (separados por coma):
+      </label>
+      <input [(ngModel)]="elementosStr" placeholder="Ej: S1,S2,S3,S4,S5,S6">
+    </div>
+    
+    <div class="input-group">
+      <label>
+        <span class="label-icon">🔢</span>
+        Cuántos tomar (k):
+      </label>
+      <input type="number" [(ngModel)]="k" placeholder="Ej: 3" min="1">
+    </div>
   </div>
   
-  <div class="input-group">
-    <label>Cuántos tomar (k):</label>
-    <input type="number" [(ngModel)]="k" placeholder="Ej: 3" min="1">
+  <div class="formula-hint">
+    <strong>💡 Fórmula de Variaciones:</strong>
+    V(n,k) = n! / (n-k)! donde n es el total de elementos y k es cuántos tomamos (el orden importa)
   </div>
   
-  <button (click)="calcular()">Calcular Variaciones</button>
+  <button (click)="calcular()">✨ Calcular Variaciones</button>
 </div>
 
 <div class="resultado-container" *ngIf="resultadoNumero !== null">
-  <h3>📊 Número de combinaciones: {{resultadoNumero}}</h3>
+  <div class="resultado-header">
+    <h3>Número total de variaciones:</h3>
+    <div class="resultado-numero">{{resultadoNumero}}</div>
+  </div>
+  
+  <div class="lista-titulo">
+    📋 Lista completa de variaciones ({{combinacionesLista.length}} resultados)
+  </div>
+  
   <ul>
     <li *ngFor="let c of combinacionesLista; let i = index">
-      {{c.join(', ')}}
+      {{i + 1}}. {{c.join(' → ')}}
     </li>
   </ul>
 </div>
